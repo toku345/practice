@@ -1,0 +1,20 @@
+#!/bin/bash
+
+command=$1
+input_dir=$(dirname $command)/input
+output_dir=$(dirname $command)/output
+
+
+for input_file in `ls $input_dir/*.txt`; do
+    filename=$(basename $input_file)
+    tmpfilename=${TMP:-/tmp}/$filename.diff
+
+    echo -e "check $filename:"
+    if diff -u <($command < $input_file) $output_dir/$filename > $tmpfilename; then
+        echo -e "OK!\n"
+    else
+        echo -e "NG\n"
+        cat $tmpfilename
+    fi
+    echo -e "-----\n"
+done
