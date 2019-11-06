@@ -1,9 +1,14 @@
 #!/bin/bash
 
 command=$1
-input_dir=$(dirname $command)/input
-output_dir=$(dirname $command)/output
 
+if [ $# -eq 1 ]; then
+    input_dir=$(dirname $command)/input
+    output_dir=$(dirname $command)/output
+elif [ $# -eq 2 ]; then
+    input_dir=$2/input
+    output_dir=$2/output
+fi
 
 for input_file in `ls $input_dir/*.txt`; do
     filename=$(basename $input_file)
