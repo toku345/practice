@@ -1,0 +1,2 @@
+A rope may form )( a trail in a maze.
+.
