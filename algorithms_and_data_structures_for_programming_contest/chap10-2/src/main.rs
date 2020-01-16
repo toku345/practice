@@ -13,10 +13,9 @@ fn right(i: usize) -> usize {
 }
 
 fn main() {
-    let h = read_line().unwrap().parse().unwrap();
+    let h = read_line().parse().unwrap();
 
     let input: Vec<i32> = read_line()
-        .unwrap()
         .split_whitespace()
         .map(|n| n.parse::<i32>().unwrap())
         .collect();
@@ -39,8 +38,8 @@ fn main() {
 }
 
 // Utilities
-fn read_line() -> io::Result<String> {
+fn read_line() -> String {
     let mut input = String::new();
-    io::stdin().read_line(&mut input)?;
-    Ok(input.trim().to_string())
+    io::stdin().read_line(&mut input).ok();
+    input.trim().to_string()
 }
