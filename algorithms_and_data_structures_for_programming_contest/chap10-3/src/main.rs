@@ -31,7 +31,7 @@ fn max_heapify(a: &mut Vec<i32>, i: usize, h: usize) {
 }
 
 fn build_max_heap(a: &mut Vec<i32>, h: usize) {
-    for i in (1..=h / 2).rev() {
+    for i in (1..(h / 2) + 1).rev() {
         max_heapify(a, i, h)
     }
 }
@@ -48,7 +48,7 @@ fn main() {
 
     build_max_heap(&mut a, h);
 
-    for i in 1..=h {
+    for i in 1..(h + 1) {
         print!(" {}", a[i]);
     }
     println!();
