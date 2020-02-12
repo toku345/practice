@@ -8,17 +8,19 @@ class DFS():
         GRAY = 1
         BLACK = 2
 
-    def __init__(self, M, n):
+    def __init__(self, M, n, debug=False):
         self.M = M
         self.n = n
         self.color = [self.Color.WHITE for _ in range(self.n)]
         self.tt = 0
         self.d, self.f = [-1] * self.n, [-1] * self.n
+        self.debug = debug
 
     def dfs_visit(self, u):
         self.color[u] = self.Color.GRAY
         self.tt += 1
         self.d[u] = self.tt     # 最初の訪問
+        self.debug_print()
 
         for v in range(self.n):
             if self.M[u][v] == 0:
@@ -29,6 +31,7 @@ class DFS():
         self.color[u] = self.Color.BLACK
         self.tt += 1
         self.f[u] = self.tt
+        self.debug_print()
 
     def dfs(self):
         for u in range(self.n):
@@ -37,6 +40,14 @@ class DFS():
 
         for u in range(self.n):
             print(f'{u+1} {self.d[u]} {self.f[u]}')
+
+    def debug_print(self):
+        if not self.debug:
+            return
+        print(f'[tt: {self.tt}] d: {self.d}')
+        print(f'[tt: {self.tt}] f: {self.f}')
+        print(f'[tt: {self.tt}] color: {self.color}')
+        print('-------------------------')
 
 
 def main():
