@@ -8,16 +8,19 @@ from queue import Queue
 class BFS():
     INFTY = sys.maxsize
 
-    def __init__(self, M, n):
+    def __init__(self, M, n, debug=False):
         self.M = M
         self.n = n
         # 距離で訪問状態(color)を管理する
         self.d = [self.INFTY] * n
+        self.debug = debug
 
     def bfs(self, s):
         q = Queue()
         q.put(s)
         self.d[s] = 0
+        self.debug_print(q)
+
         while not q.empty():
             u = q.get()
             for v in range(self.n):
@@ -27,6 +30,7 @@ class BFS():
                     continue
                 self.d[v] = self.d[u] + 1
                 q.put(v)
+                self.debug_print(q)
 
         for i in range(self.n):
             if self.d[i] == self.INFTY:
@@ -34,6 +38,13 @@ class BFS():
             else:
                 d = self.d[i]
             print(f'{i+1} {d}')
+
+    def debug_print(self, q):
+        if not self.debug:
+            return
+        print('d: ', self.d)
+        print('q: ', q.queue)
+        print('-------------------------')
 
 
 def main():
