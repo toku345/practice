@@ -8,13 +8,14 @@ class DFS():
         GRAY = 1
         BLACK = 2
 
-    def __init__(self, M, n):
+    def __init__(self, M, n, debug=False):
         self.M = M
         self.n = n
         self.color = [self.Color.WHITE for _ in range(self.n)]
         self.d, self.f = [-1] * self.n, [-1] * self.n
         self.tt = 0
         self.nt = [0] * self.n
+        self.debug = debug
 
     def next(self, u: int):
         while self.nt[u] < self.n:
@@ -30,6 +31,8 @@ class DFS():
         self.color[r] = self.Color.GRAY
         self.tt += 1
         self.d[r] = self.tt
+        self.debug_print(S)
+
         while len(S) > 0:
             # スタックの一番上（= listの末尾）の値を取得 ※ pop()するとlistからなくなるので[-1]でアクセス
             u = S[-1]
@@ -40,11 +43,13 @@ class DFS():
                     self.tt += 1
                     self.d[v] = self.tt
                     S.append(v)
+                    self.debug_print(S)
             else:
                 S.pop()
                 self.color[u] = self.Color.BLACK
                 self.tt += 1
                 self.f[u] = self.tt
+                self.debug_print(S)
 
     def dfs(self):
         for u in range(self.n):
@@ -53,6 +58,15 @@ class DFS():
 
         for i in range(self.n):
             print(f'{i+1} {self.d[i]} {self.f[i]}')
+
+    def debug_print(self, S):
+        if not self.debug:
+            return
+        print(f'[tt: {self.tt}] d: {self.d}')
+        print(f'[tt: {self.tt}] f: {self.f}')
+        print(f'[tt: {self.tt}] color: {self.color}')
+        print(f'[tt: {self.tt}] S: {S}')
+        print('-------------------------')
 
 
 def main():
