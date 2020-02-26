@@ -31,7 +31,7 @@ class DFS():
         self.color[r] = self.Color.GRAY
         self.tt += 1
         self.d[r] = self.tt
-        self.debug_print(S)
+        self._debug_print(S)
 
         while len(S) > 0:
             # スタックの一番上（= listの末尾）の値を取得 ※ pop()するとlistからなくなるので[-1]でアクセス
@@ -43,13 +43,13 @@ class DFS():
                     self.tt += 1
                     self.d[v] = self.tt
                     S.append(v)
-                    self.debug_print(S)
+                    self._debug_print(S)
             else:
                 S.pop()
                 self.color[u] = self.Color.BLACK
                 self.tt += 1
                 self.f[u] = self.tt
-                self.debug_print(S)
+                self._debug_print(S)
 
     def dfs(self):
         for u in range(self.n):
@@ -59,7 +59,7 @@ class DFS():
         for i in range(self.n):
             print(f'{i+1} {self.d[i]} {self.f[i]}')
 
-    def debug_print(self, S):
+    def _debug_print(self, S):
         if not self.debug:
             return
         print(f'[tt: {self.tt}] d: {self.d}')

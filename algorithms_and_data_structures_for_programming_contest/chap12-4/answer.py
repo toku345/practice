@@ -19,7 +19,7 @@ class BFS():
         q = Queue()
         q.put(s)
         self.d[s] = 0
-        self.debug_print(q)
+        self._debug_print(q)
 
         while not q.empty():
             u = q.get()
@@ -30,7 +30,7 @@ class BFS():
                     continue
                 self.d[v] = self.d[u] + 1
                 q.put(v)
-                self.debug_print(q)
+                self._debug_print(q)
 
         for i in range(self.n):
             if self.d[i] == self.INFTY:
@@ -39,7 +39,7 @@ class BFS():
                 d = self.d[i]
             print(f'{i+1} {d}')
 
-    def debug_print(self, q):
+    def _debug_print(self, q):
         if not self.debug:
             return
         print('d: ', self.d)

@@ -20,7 +20,7 @@ class DFS():
         self.color[u] = self.Color.GRAY
         self.tt += 1
         self.d[u] = self.tt     # 最初の訪問
-        self.debug_print()
+        self._debug_print()
 
         for v in range(self.n):
             if self.M[u][v] == 0:
@@ -31,7 +31,7 @@ class DFS():
         self.color[u] = self.Color.BLACK
         self.tt += 1
         self.f[u] = self.tt
-        self.debug_print()
+        self._debug_print()
 
     def dfs(self):
         for u in range(self.n):
@@ -41,7 +41,7 @@ class DFS():
         for u in range(self.n):
             print(f'{u+1} {self.d[u]} {self.f[u]}')
 
-    def debug_print(self):
+    def _debug_print(self):
         if not self.debug:
             return
         print(f'[tt: {self.tt}] d: {self.d}')
