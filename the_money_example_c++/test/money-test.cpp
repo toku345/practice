@@ -9,3 +9,7 @@ TEST(MoneyTest, TestMultipulication) {
   product = five.times(3);
   ASSERT_EQ(15, product.amount);
 }
+
+TEST(MoneyTest, TestEquality) {
+  ASSERT_TRUE((Doller {5}).equals(Doller {5}));
+}
