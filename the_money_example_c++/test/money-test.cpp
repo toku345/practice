@@ -1,6 +1,9 @@
 #include "gtest/gtest.h"
-#include "main/money.h"
+#include "main/doller.h"
 
-TEST(MoneyTest, SampleTest) {
-  EXPECT_EQ(1, 1);
+
+TEST(MoneyTest, TestMultipulication) {
+  Doller five(5);
+  five.times(2);
+  EXPECT_EQ(10, five.amount);
 }
