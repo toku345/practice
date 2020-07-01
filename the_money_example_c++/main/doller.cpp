@@ -5,5 +5,5 @@ Doller::Doller(int amount) {
 }
 
 void Doller::times(int multiplier) {
-  amount = amount * multiplier;
+  amount *= multiplier;
 }
