@@ -1,7 +1,9 @@
 #include "doller.h"
 
-Doller::Doller(int amount) {}
+Doller::Doller(int amount) {
+  this->amount = amount;
+}
 
 void Doller::times(int multiplier) {
-
+  amount = amount * multiplier;
 }

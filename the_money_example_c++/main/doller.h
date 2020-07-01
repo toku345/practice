@@ -4,7 +4,7 @@
 
 class Doller {
 public:
-  int amount = 10;
+  int amount;
 
   Doller(int amount);
 
