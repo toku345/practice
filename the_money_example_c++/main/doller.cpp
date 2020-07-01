@@ -4,6 +4,6 @@ Doller::Doller(int amount) {
   this->amount = amount;
 }
 
-void Doller::times(int multiplier) {
-  amount *= multiplier;
+Doller Doller::times(int multiplier) {
+  return Doller { amount * multiplier };
 }

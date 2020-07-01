@@ -8,7 +8,7 @@ public:
 
   Doller(int amount);
 
-  void times(int multiplier);
+  Doller times(int multiplier);
 };
 
 #endif
