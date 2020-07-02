@@ -8,7 +8,7 @@ public:
   Dollar(int amount);
 
   Dollar times(int multiplier);
-  bool operator==(Dollar dollar) const;
+  bool operator==(const Dollar& dollar) const;
 };
 
 #endif

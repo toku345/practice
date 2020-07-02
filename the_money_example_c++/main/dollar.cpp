@@ -8,4 +8,6 @@ Dollar Dollar::times(int multiplier) {
   return Dollar { amount * multiplier };
 }
 
-bool Dollar::operator==(Dollar dollar) const { return amount == dollar.amount; }
+bool Dollar::operator==(const Dollar& dollar) const {
+  return amount == dollar.amount;
+}
