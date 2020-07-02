@@ -9,8 +9,6 @@ public:
 
   Dollar times(int multiplier);
   bool operator==(Dollar dollar) const;
-private:
-  int amount;
 };
 
 #endif

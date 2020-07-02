@@ -2,6 +2,8 @@
 #define LIB_MONEY_H_
 
 class Money {
+protected:
+  int amount;
 };
 
 #endif
