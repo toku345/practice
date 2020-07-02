@@ -1,16 +1,16 @@
 #include "gtest/gtest.h"
-#include "main/doller.h"
+#include "main/dollar.h"
 
 
 TEST(MoneyTest, TestMultipulication) {
-  Doller five(5);
-  Doller product = five.times(2);
+  Dollar five(5);
+  Dollar product = five.times(2);
   EXPECT_EQ(10, product.amount);
   product = five.times(3);
   ASSERT_EQ(15, product.amount);
 }
 
 TEST(MoneyTest, TestEquality) {
-  ASSERT_TRUE((Doller {5}).equals(Doller {5}));
-  ASSERT_FALSE((Doller {5}).equals(Doller {6}));
+  ASSERT_TRUE((Dollar {5}).equals(Dollar {5}));
+  ASSERT_FALSE((Dollar {5}).equals(Dollar {6}));
 }
