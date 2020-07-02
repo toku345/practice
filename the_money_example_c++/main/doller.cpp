@@ -8,6 +8,6 @@ Doller Doller::times(int multiplier) {
   return Doller { amount * multiplier };
 }
 
-bool Doller::equals(Doller object) {
-  return true;
+bool Doller::equals(Doller dollar) {
+  return amount == dollar.amount;
 }

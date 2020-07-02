@@ -12,4 +12,5 @@ TEST(MoneyTest, TestMultipulication) {
 
 TEST(MoneyTest, TestEquality) {
   ASSERT_TRUE((Doller {5}).equals(Doller {5}));
+  ASSERT_FALSE((Doller {5}).equals(Doller {6}));
 }

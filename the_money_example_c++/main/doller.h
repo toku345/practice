@@ -9,7 +9,7 @@ public:
   Doller(int amount);
 
   Doller times(int multiplier);
-  bool equals(Doller object);
+  bool equals(Doller dollar);
 };
 
 #endif
