@@ -1,5 +1,6 @@
 #include "gtest/gtest.h"
 #include "main/dollar.h"
+#include "main/franc.h"
 
 
 TEST(MoneyTest, TestMultipulication) {
@@ -11,4 +12,10 @@ TEST(MoneyTest, TestMultipulication) {
 TEST(MoneyTest, TestEquality) {
   ASSERT_TRUE(Dollar{5} == Dollar{5});
   ASSERT_FALSE(Dollar{5} == Dollar{6});
+}
+
+TEST(MoneyTest, TestFrancMultipulication) {
+  Franc five(5);
+  EXPECT_EQ(Franc{10}, five.times(2));
+  ASSERT_EQ(Franc{15}, five.times(3));
 }
