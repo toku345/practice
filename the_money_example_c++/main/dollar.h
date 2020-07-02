@@ -9,7 +9,7 @@ public:
   Dollar(int amount);
 
   Dollar times(int multiplier);
-  bool equals(Dollar dollar);
+  bool operator==(Dollar dollar) const;
 };
 
 #endif
