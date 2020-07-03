@@ -2,6 +2,9 @@
 #define LIB_MONEY_H_
 
 class Money {
+public:
+  bool operator==(Money money) const;
+
 protected:
   int amount;
 };
