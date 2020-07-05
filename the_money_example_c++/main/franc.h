@@ -8,6 +8,9 @@ public:
   Franc(int amount);
 
   Franc times(int multiplier);
+
+  bool operator==(Franc money) const;
+  bool operator==(Money money) const;
 };
 
 #endif

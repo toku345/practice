@@ -7,3 +7,6 @@ Franc::Franc(int amount) {
 Franc Franc::times(int multiplier) {
   return Franc { amount * multiplier };
 }
+
+bool Franc::operator==(Franc money) const { return amount == money.amount; }
+bool Franc::operator==(Money money) const { return false; }
