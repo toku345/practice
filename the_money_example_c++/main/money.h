@@ -3,6 +3,8 @@
 
 class Money {
 public:
+  Money(int amount);
+
   bool operator==(Money money) const;
 
 protected:
