@@ -3,8 +3,8 @@
 
 Dollar::Dollar(int amount) : Money(amount) { }
 
-Dollar Dollar::times(int multiplier) {
-  return Dollar { amount * multiplier };
+Money Dollar::times(int multiplier) {
+  return Money { amount * multiplier };
 }
 
 bool Dollar::operator==(Dollar money) const { return amount == money.amount; }

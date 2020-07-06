@@ -5,8 +5,8 @@
 
 TEST(MoneyTest, TestMultipulication) {
   Dollar five(5);
-  EXPECT_EQ(Dollar{10}, five.times(2));
-  ASSERT_EQ(Dollar{15}, five.times(3));
+  EXPECT_EQ(static_cast<Money>(Dollar{10}), five.times(2));
+  ASSERT_EQ(static_cast<Money>(Dollar{15}), five.times(3));
 }
 
 TEST(MoneyTest, TestEquality) {
@@ -20,6 +20,6 @@ TEST(MoneyTest, TestEquality) {
 
 TEST(MoneyTest, TestFrancMultipulication) {
   Franc five(5);
-  EXPECT_EQ(Franc{10}, five.times(2));
-  ASSERT_EQ(Franc{15}, five.times(3));
+  EXPECT_EQ(static_cast<Money>(Franc{10}), five.times(2));
+  ASSERT_EQ(static_cast<Money>(Franc{15}), five.times(3));
 }
