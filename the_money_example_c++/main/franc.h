@@ -7,13 +7,8 @@ class Franc : public  Money {
 public:
   Franc(int amount);
 
-  string currency() const;
-
   bool operator==(Franc money) const;
   bool operator==(Money money) const;
-
-private:
-  string _currency;
 };
 
 #endif

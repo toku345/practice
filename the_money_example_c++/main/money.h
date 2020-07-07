@@ -10,10 +10,13 @@ public:
 
   Money times(int multiplier);
 
+  string currency() const;
+
   bool operator==(Money money) const;
 
 protected:
   int amount;
+  string _currency;
 };
 
 #endif
