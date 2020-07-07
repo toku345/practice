@@ -11,6 +11,9 @@ public:
 
   bool operator==(Franc money) const;
   bool operator==(Money money) const;
+
+private:
+  string _currency;
 };
 
 #endif

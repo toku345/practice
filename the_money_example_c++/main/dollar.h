@@ -11,6 +11,9 @@ public:
 
   bool operator==(Dollar money) const;
   bool operator==(Money money) const;
+
+private:
+  string _currency;
 };
 
 #endif

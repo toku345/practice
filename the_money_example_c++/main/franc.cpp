@@ -1,10 +1,12 @@
 #include "franc.h"
 #include "money.h"
 
-Franc::Franc(int amount) : Money(amount) { }
+Franc::Franc(int amount) : Money(amount) {
+  _currency = "CHF";
+}
 
 string Franc::currency() const {
-  return "CHF";
+  return _currency;
 }
 
 bool Franc::operator==(Franc money) const { return amount == money.amount; }
