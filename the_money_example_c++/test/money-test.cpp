@@ -23,3 +23,8 @@ TEST(MoneyTest, TestFrancMultipulication) {
   EXPECT_EQ(static_cast<Money>(Franc{10}), five.times(2));
   ASSERT_EQ(static_cast<Money>(Franc{15}), five.times(3));
 }
+
+TEST(MoneyTest, TestCurrency) {
+  ASSERT_EQ("USD", Dollar{1}.currency());
+  ASSERT_EQ("CHF", Franc{1}.currency());
+}
