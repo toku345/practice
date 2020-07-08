@@ -8,8 +8,6 @@ class Money {
 public:
   Money(int amount);
 
-  Money times(int multiplier);
-
   string currency() const;
 
   bool operator==(Money money) const;
