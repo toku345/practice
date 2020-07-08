@@ -1,7 +1,7 @@
 #include "dollar.h"
 #include "money.h"
 
-Dollar::Dollar(int amount) : Money(amount) { _currency = "USD"; }
+Dollar::Dollar(int amount, string currency) : Money(amount) { _currency = currency; }
 
 Money Dollar::times(int multiplier) { return Money{amount * multiplier}; }
 

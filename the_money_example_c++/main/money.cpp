@@ -11,8 +11,8 @@ bool Money::operator==(Money money) const {
 }
 
 Dollar dollar(int amount) {
-  return Dollar{amount};
+  return Dollar{amount, "USD"};
 }
 Franc franc(int amount) {
-  return Franc{amount};
+  return Franc{amount, "CHF"};
 }

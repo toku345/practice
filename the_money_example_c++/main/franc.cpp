@@ -1,7 +1,7 @@
 #include "franc.h"
 #include "money.h"
 
-Franc::Franc(int amount) : Money(amount) { _currency = "CHF"; }
+Franc::Franc(int amount, string currency) : Money(amount) { _currency = currency; }
 
 Money Franc::times(int multiplier) { return Money{amount * multiplier}; }
 

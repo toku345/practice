@@ -5,7 +5,7 @@
 
 class Dollar : public Money {
 public:
-  Dollar(int amount);
+  Dollar(int amount, string currency);
 
   Money times(int multiplier);
 

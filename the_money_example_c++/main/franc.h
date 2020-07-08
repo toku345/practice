@@ -5,7 +5,7 @@
 
 class Franc : public  Money {
 public:
-  Franc(int amount);
+  Franc(int amount, string currency);
 
   Money times(int multiplier);
 
