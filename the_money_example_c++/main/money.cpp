@@ -2,7 +2,10 @@
 #include "dollar.h"
 #include "franc.h"
 
-Money::Money(int amount) { this->amount = amount; }
+Money::Money(int amount, string currency) {
+  this->amount = amount;
+  this->_currency = currency;
+}
 
 string Money::currency() const { return _currency; }
 

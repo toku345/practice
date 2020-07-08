@@ -9,7 +9,7 @@ class Franc;
 
 class Money {
 public:
-  Money(int amount);
+  Money(int amount, string currency);
 
   string currency() const;
 
