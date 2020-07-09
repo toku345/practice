@@ -9,6 +9,8 @@ Money::Money(int amount, string currency) {
 
 string Money::currency() const { return _currency; }
 
+Money Money::times(int multiplier) { return Franc(amount * multiplier, _currency); }
+
 bool Money::operator==(Money money) const {
   return amount == money.amount && _currency == money._currency;
 }

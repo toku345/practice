@@ -13,6 +13,8 @@ public:
 
   string currency() const;
 
+  Money times(int multiplier);
+
   bool operator==(Money money) const;
 
 protected:
