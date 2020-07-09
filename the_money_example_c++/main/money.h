@@ -4,9 +4,6 @@
 #include <string>
 using namespace std;
 
-class Dollar;
-class Franc;
-
 class Money {
 public:
   Money(int amount, string currency);
@@ -22,7 +19,7 @@ protected:
   string _currency;
 };
 
-Dollar dollar(int amount);
-Franc franc(int amount);
+Money dollar(int amount);
+Money franc(int amount);
 
 #endif

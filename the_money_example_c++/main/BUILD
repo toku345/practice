@@ -2,8 +2,8 @@ load("@rules_cc//cc:defs.bzl", "cc_binary", "cc_library")
 
 cc_library(
     name = "money",
-    srcs = ["money.cpp", "dollar.cpp", "franc.cpp"],
-    hdrs = ["money.h", "dollar.h", "franc.h"],
+    srcs = ["money.cpp"],
+    hdrs = ["money.h"],
     visibility = ["//test:__pkg__"],
 )
 
