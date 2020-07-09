@@ -10,7 +10,7 @@ Money::Money(int amount, string currency) {
 string Money::currency() const { return _currency; }
 
 bool Money::operator==(Money money) const {
-  return amount == money.amount;
+  return amount == money.amount && _currency == money._currency;
 }
 
 Dollar dollar(int amount) {

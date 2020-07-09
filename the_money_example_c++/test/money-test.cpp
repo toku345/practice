@@ -28,3 +28,10 @@ TEST(MoneyTest, TestCurrency) {
   ASSERT_EQ("USD", dollar(1).currency());
   ASSERT_EQ("CHF", franc(1).currency());
 }
+
+TEST(MoneyTest, TestDifferentClassEquality) {
+  ASSERT_TRUE(Money(10, "CHF") == Franc(10, "CHF"));
+  ASSERT_TRUE(Franc(10, "CHF") == Money(10, "CHF"));
+  ASSERT_FALSE(Franc(10, "CHF") == Money(10, "USD"));
+  ASSERT_TRUE(Dollar(10, "USD") == Money(10, "USD"));
+}
