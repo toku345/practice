@@ -17,3 +17,8 @@ TEST(MoneyTest, TestCurrency) {
   ASSERT_EQ("USD", dollar(1).currency());
   ASSERT_EQ("CHF", franc(1).currency());
 }
+
+TEST(MoneyTest, TestSimpleAddition) {
+  Money sum = dollar(5) + dollar(5);
+  ASSERT_EQ(dollar(10), sum);
+}

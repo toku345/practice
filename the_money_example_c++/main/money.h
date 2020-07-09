@@ -14,6 +14,8 @@ public:
 
   bool operator==(Money money) const;
 
+  Money operator+(Money addend);
+
 protected:
   int amount;
   string _currency;

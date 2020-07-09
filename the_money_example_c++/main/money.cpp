@@ -13,6 +13,10 @@ bool Money::operator==(Money money) const {
   return amount == money.amount && _currency == money._currency;
 }
 
+Money Money::operator+(Money addend) {
+  return Money(amount + addend.amount, _currency);
+}
+
 Money dollar(int amount) {
   return Money(amount, "USD");
 }
