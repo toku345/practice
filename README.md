@@ -9,13 +9,13 @@
 🗂 aoj
 ------
 
-[AIZU ONLINE JUDGE](https://onlinejudge.u-aizu.ac.jp) の toku345 の回答
+[AIZU ONLINE JUDGE](https://onlinejudge.u-aizu.ac.jp) の @toku345 の解答
 
+🗂 leetcode
+-----------
 
-🗂 intro_computation_and_programming
--------------------------------------
+[LeetCode](https://leetcode.com/) の問題を使って新しく始めた言語を練習した際の解答
 
-[世界標準MIT教科書 Python言語によるプログラミングイントロダクション第2版: データサイエンスとアプリケーション](https://www.amazon.co.jp/dp/4764905183)に関するあれこれ
 
 🗂 the_money_example_c++
 -------------------------------------
