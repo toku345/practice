@@ -5,7 +5,7 @@ namespace Answers.UnitTests;
 
 public class Q1523Tests
 {
-    private Solution _solution;
+    private Solution? _solution;
 
     [SetUp]
     public void Setup()
@@ -18,7 +18,7 @@ public class Q1523Tests
     {
         int low = 3;
         int high = 7;
-        int output = _solution.CountOdds(low, high);
+        int output = _solution!.CountOdds(low, high);
         Assert.AreEqual(3, output);
     }
 
@@ -27,7 +27,7 @@ public class Q1523Tests
     {
         int low = 8;
         int high = 9;
-        int output = _solution.CountOdds(low, high);
+        int output = _solution!.CountOdds(low, high);
         Assert.AreEqual(1, output);
     }
 
@@ -36,7 +36,7 @@ public class Q1523Tests
     {
         int low = 0;
         int high = 1;
-        int output = _solution.CountOdds(low, high);
+        int output = _solution!.CountOdds(low, high);
         Assert.AreEqual(1, output);
     }
 
@@ -45,7 +45,7 @@ public class Q1523Tests
     {
         int low = 7;
         int high = 7;
-        int output = _solution.CountOdds(low, high);
+        int output = _solution!.CountOdds(low, high);
         Assert.AreEqual(1, output);
     }
 
@@ -54,7 +54,7 @@ public class Q1523Tests
     {
         int low = 10;
         int high = 10;
-        int output = _solution.CountOdds(low, high);
+        int output = _solution!.CountOdds(low, high);
         Assert.AreEqual(0, output);
     }
 }
