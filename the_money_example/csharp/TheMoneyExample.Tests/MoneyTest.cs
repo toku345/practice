@@ -18,4 +18,12 @@ public class MoneyTest
         Assert.True(new Dollar(5).Equals(new Dollar(5)));
         Assert.False(new Dollar(5).Equals(new Dollar(6)));
     }
+
+    [Test]
+    public void TestFrancMultiplication()
+    {
+        var five = new Franc(5);
+        Assert.AreEqual(new Franc(10), five.times(2));
+        Assert.AreEqual(new Franc(15), five.times(3));
+    }
 }
