@@ -1,6 +1,6 @@
 namespace Money;
 
-public class Dollar
+public class Dollar : Money
 {
     private int amount;
 
