@@ -66,6 +66,25 @@ jobs:
       # - run: |
       #   echo "Run, Build Application using script"
       #   ./location_of_script_within_repo/buildscript.sh
+      - name: Run, Build C# Application in ./leetcode/csharp
+        run: |
+          echo "Run, Build C# Application using script"
+          dotnet --info
+          dotnet build
+          dotnet restore
+          dotnet build --no-incremental /p:UseSharedCompilation=false
+        working-directory: ./leetcode/csharp
+        if: ${{ matrix.language == 'csharp' }}
+
+      - name: Run, Build C# Application in ./the_money_example/csharp
+        run: |
+          echo "Run, Build C# Application using script"
+          dotnet --info
+          dotnet build
+          dotnet restore
+          dotnet build --no-incremental /p:UseSharedCompilation=false
+        working-directory: ./the_money_example/csharp
+        if: ${{ matrix.language == 'csharp' }}
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v2
