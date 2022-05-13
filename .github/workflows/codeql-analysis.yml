@@ -86,5 +86,13 @@ jobs:
         working-directory: ./the_money_example/csharp
         if: ${{ matrix.language == 'csharp' }}
 
+      - name: Run, Build C++ Application in ./the_money_example/c++
+        run: |
+          echo "Run, Build C++ Application using script"
+          npm install @bazel/bazelisk
+          npx bazel build test:money-test
+        working-directory: ./the_money_example/c++
+        if: ${{ matrix.language == 'cpp' }}
+
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v2
