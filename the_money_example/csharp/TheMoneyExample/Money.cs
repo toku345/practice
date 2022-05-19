@@ -3,8 +3,14 @@ namespace Money;
 public abstract class Money
 {
     protected int amount;
+    protected String? currency;
 
     public abstract Money times(int multiplier);
+
+    public String Currency()
+    {
+        return currency!;
+    }
 
     public override bool Equals(Object? obj)
     {
