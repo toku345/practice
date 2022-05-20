@@ -2,14 +2,10 @@ namespace Money;
 
 public class Franc : Money
 {
-    public Franc(int amount)
-    {
-        this.amount = amount;
-        currency = "CHF";
-    }
+    public Franc(int amount, String currency) : base(amount, currency) { }
 
     public override Money times(int multiplier)
     {
-        return new Franc(amount * multiplier);
+        return Money.Franc(amount * multiplier);
     }
 }

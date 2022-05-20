@@ -2,14 +2,10 @@ namespace Money;
 
 public class Dollar : Money
 {
-    public Dollar(int amount)
-    {
-        this.amount = amount;
-        currency = "USD";
-    }
+    public Dollar(int amount, String currency) : base(amount, currency) { }
 
     public override Money times(int multiplier)
     {
-        return new Dollar(amount * multiplier);
+        return Money.Dollar(amount * multiplier);
     }
 }
