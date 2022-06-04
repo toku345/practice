@@ -1,6 +1,6 @@
 namespace Money;
 
-public class Money
+public class Money : IExpression
 {
     protected int amount;
     protected String currency;
@@ -15,6 +15,11 @@ public class Money
     {
         return new Money(amount * multiplier, currency);
 
+    }
+
+    public IExpression Plus(Money addend)
+    {
+        return new Money(amount + addend.amount, currency);
     }
 
     public String Currency()
