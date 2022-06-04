@@ -11,7 +11,7 @@ public class Money
         this.currency = currency;
     }
 
-    public Money times(int multiplier)
+    public Money Times(int multiplier)
     {
         return new Money(amount * multiplier, currency);
 

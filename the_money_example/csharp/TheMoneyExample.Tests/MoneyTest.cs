@@ -8,8 +8,8 @@ public class MoneyTest
     public void TestMultiplication()
     {
         Money five = Money.Dollar(5);
-        Assert.AreEqual(Money.Dollar(10), five.times(2));
-        Assert.AreEqual(Money.Dollar(15), five.times(3));
+        Assert.AreEqual(Money.Dollar(10), five.Times(2));
+        Assert.AreEqual(Money.Dollar(15), five.Times(3));
     }
 
     [Test]
