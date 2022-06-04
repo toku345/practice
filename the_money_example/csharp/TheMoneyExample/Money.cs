@@ -1,6 +1,6 @@
 namespace Money;
 
-public abstract class Money
+public class Money
 {
     protected int amount;
     protected String currency;
@@ -11,7 +11,11 @@ public abstract class Money
         this.currency = currency;
     }
 
-    public abstract Money times(int multiplier);
+    public Money times(int multiplier)
+    {
+        return new Money(amount * multiplier, currency);
+
+    }
 
     public String Currency()
     {
@@ -21,7 +25,12 @@ public abstract class Money
     public override bool Equals(Object? obj)
     {
         Money money = (Money)obj!;
-        return amount == money.amount && GetType().Equals(money.GetType());
+        return amount == money.amount && Currency().Equals(money.Currency());
+    }
+
+    public override string ToString()
+    {
+        return $"{amount} {currency}";
     }
 
     public static Money Dollar(int amount)
