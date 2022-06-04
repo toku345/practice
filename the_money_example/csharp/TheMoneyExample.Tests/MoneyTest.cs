@@ -23,8 +23,8 @@ public class MoneyTest
     [Test]
     public void TestCurrency()
     {
-        Assert.AreEqual("USD", Money.Dollar(1).Currency());
-        Assert.AreEqual("CHF", Money.Franc(1).Currency());
+        Assert.AreEqual("USD", Money.Dollar(1).Currency);
+        Assert.AreEqual("CHF", Money.Franc(1).Currency);
     }
 
     [Test]

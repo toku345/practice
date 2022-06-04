@@ -4,17 +4,17 @@ public class Money : IExpression
 {
     public int Amount { get; }
 
-    protected String currency;
+    public String Currency { get; }
 
     public Money(int amount, String currency)
     {
-        this.Amount = amount;
-        this.currency = currency;
+        Amount = amount;
+        Currency = currency;
     }
 
     public Money Times(int multiplier)
     {
-        return new Money(Amount * multiplier, currency);
+        return new Money(Amount * multiplier, Currency);
 
     }
 
@@ -28,20 +28,15 @@ public class Money : IExpression
         return this;
     }
 
-    public String Currency()
-    {
-        return currency!;
-    }
-
     public override bool Equals(Object? obj)
     {
         Money money = (Money)obj!;
-        return Amount == money.Amount && Currency().Equals(money.Currency());
+        return Amount == money.Amount && Currency.Equals(money.Currency);
     }
 
     public override string ToString()
     {
-        return $"{Amount} {currency}";
+        return $"{Amount} {Currency}";
     }
 
     public static Money Dollar(int amount)
