@@ -2,24 +2,30 @@ namespace Money;
 
 public class Money : IExpression
 {
-    protected int amount;
+    public int Amount { get; }
+
     protected String currency;
 
     public Money(int amount, String currency)
     {
-        this.amount = amount;
+        this.Amount = amount;
         this.currency = currency;
     }
 
     public Money Times(int multiplier)
     {
-        return new Money(amount * multiplier, currency);
+        return new Money(Amount * multiplier, currency);
 
     }
 
     public IExpression Plus(Money addend)
     {
-        return new Money(amount + addend.amount, currency);
+        return new Sum(this, addend);
+    }
+
+    public Money Reduce(String to)
+    {
+        return this;
     }
 
     public String Currency()
@@ -30,12 +36,12 @@ public class Money : IExpression
     public override bool Equals(Object? obj)
     {
         Money money = (Money)obj!;
-        return amount == money.amount && Currency().Equals(money.Currency());
+        return Amount == money.Amount && Currency().Equals(money.Currency());
     }
 
     public override string ToString()
     {
-        return $"{amount} {currency}";
+        return $"{Amount} {currency}";
     }
 
     public static Money Dollar(int amount)
