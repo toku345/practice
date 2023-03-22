@@ -1,24 +1,42 @@
-import { twoSum3 as twoSum } from "./code";
+import { twoSum, twoSum2, twoSum3 } from "./code";
+
+const func1 = twoSum;
 
 test("example1", () => {
-  let nums = [2, 7, 11, 15];
-  let target = 9;
-  var result = twoSum(nums, target);
-  expect(result).toEqual([0, 1]);
+  const nums = [2, 7, 11, 15];
+  const target = 9;
+  const expected = [0, 1];
+
+  const result1 = twoSum(nums, target);
+  expect(result1).toEqual(expected);
+  const result2 = twoSum2(nums, target);
+  expect(result2).toEqual(expected);
+  const result3 = twoSum3(nums, target);
+  expect(result3).toEqual(expected);
 });
 
 test("example2", () => {
-  let nums = [3, 2, 4];
-  let target = 6;
-  var result = twoSum(nums, target);
+  const nums = [3, 2, 4];
+  const target = 6;
+  const expected = [1, 2];
 
-  expect(result).toEqual([1, 2]);
+  const result1 = twoSum(nums, target);
+  expect(result1).toEqual(expected);
+  const result2 = twoSum2(nums, target);
+  expect(result2).toEqual(expected);
+  const result3 = twoSum3(nums, target);
+  expect(result3).toEqual(expected);
 });
 
 test("example3", () => {
-  let nums = [3, 3];
-  let target = 6;
-  var result = twoSum(nums, target);
+  const nums = [3, 3];
+  const target = 6;
+  const expected = [0, 1];
 
-  expect(result).toEqual([0, 1]);
+  const result1 = twoSum(nums, target);
+  expect(result1).toEqual(expected);
+  const result2 = twoSum2(nums, target);
+  expect(result2).toEqual(expected);
+  const result3 = twoSum3(nums, target);
+  expect(result3).toEqual(expected);
 });

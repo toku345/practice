@@ -1,7 +1,7 @@
 // My Answer: Brute Force!
 function twoSum(nums: number[], target: number): number[] {
-  for (var i = 0; i < nums.length - 1; i++) {
-    for (var j = i + 1; j < nums.length; j++) {
+  for (let i = 0; i < nums.length - 1; i++) {
+    for (let j = i + 1; j < nums.length; j++) {
       if (nums[i] + nums[j] === target) {
         return [i, j];
       }
@@ -27,10 +27,10 @@ function twoSum2(nums: number[], target: number): number[] {
 }
 
 function twoSum3(nums: number[], target: number): number[] {
-  var hashmap = new Map<number, number>();
+  const hashmap = new Map<number, number>();
   for (const [i, num] of nums.entries()) {
     const complement = target - num;
-    if (hashmap.get(complement) != null){
+    if (hashmap.get(complement) != null) {
       return [hashmap.get(complement)!, i];
     }
     hashmap.set(num, i);
